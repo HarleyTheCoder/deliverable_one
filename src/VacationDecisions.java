@@ -19,7 +19,7 @@ public class VacationDecisions {
 		System.out.print("What kind of trip would you like to go on, " + "musical," + 
 				 		 "\ntropical, or adventurous? ");	
 		
-		//Input check: Doing this prevents a possible bug 
+		//Input check: Doing this first prevents a possible bug 
 		//by making sure the user's input is a valid answer.
 		while (chkInput == true) {
 			vacationType = (scanner.next()).toLowerCase(); //**stores input into vacationType
@@ -36,7 +36,7 @@ public class VacationDecisions {
 		//Asks for group size
 		System.out.print("How many are in your group? ");
 		
-		//Another input check, asks user to answer again if user input < 1
+		//Another input check, asks user to answer again if user input !> 0
 		while (chkInput == false) {
 			groupSize = scanner.nextInt(); //**stores input into groupSize
 			
@@ -63,11 +63,11 @@ public class VacationDecisions {
 		
 		
 		//**Determines travel method and concatenates it to "result"
-		if (groupSize < 3) { //(already took care of "less than 1" possibility)
+		if (groupSize < 3) { //(already ensured that "less than 1" isn't a possibility)
 			result = result.concat("first class flight ");
 		} else if (groupSize < 6) { //**relational operators for groupSize comparisons
 			result = result.concat("helicopter ");
-		} else {
+		} else { //anything above 6 goes here
 			result = result.concat("charter flight ");
 		}
 		
@@ -75,7 +75,7 @@ public class VacationDecisions {
 		if (vacationType.equals("musical")) { //**makes vacationType comparisons
 			result += "to New Orleans.";
 		} else if (vacationType.equals("tropical")) {
-			result += "to Mexico for a beach vacation.";
+			result += "to Mexico for a beach vacation."; //used creativity since it's ok
 		} else if (vacationType.equals("adventurous")) {
 			result += "to the Grand Canyon for whitewater rafting.";
 		}
