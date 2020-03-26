@@ -51,7 +51,7 @@ public class VacationDecisions {
 		
 		
 		//**Formats first part of "result" string using user input,
-		//the if-then statement ensure correct grammar
+		//the if-then statements ensure correct grammar
 		if (vacationType.equals("adventurous")) {
 			result = String.format("Since you're a group of " + groupSize + " going on an " +
 					 vacationType + " vacation, you\nshould take a ");
